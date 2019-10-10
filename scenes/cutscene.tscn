@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/fonts/dpcomic.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/cutscene.gd" type="Script" id=2]
+[ext_resource path="res://assets/idle/realidle0000.png" type="Texture" id=3]
+[ext_resource path="res://assets/idle/realidle0001.png" type="Texture" id=4]
+[ext_resource path="res://assets/idle/realidle0002.png" type="Texture" id=5]
+[ext_resource path="res://assets/idle/realidle0003.png" type="Texture" id=6]
+[ext_resource path="res://assets/idle/realidle0004.png" type="Texture" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="cutscene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -149.0
+color = Color( 0, 0, 0, 0.65098 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+margin_left = 180.88
+margin_top = 56.4783
+margin_right = 1360.88
+margin_bottom = 111.478
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+visible_characters = 25
+script = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="ColorRect"]
+wait_time = 0.07
+autostart = true
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 1086.12
+margin_top = 123.82
+margin_right = 1272.12
+margin_bottom = 144.82
+custom_fonts/font = SubResource( 2 )
+text = "Q : Skip | Enter : Next"
+
+[node name="idle" type="AnimatedSprite" parent="."]
+position = Vector2( 100.171, 569.44 )
+scale = Vector2( 20, 20 )
+frames = SubResource( 3 )
+frame = 3
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 0.878431 )
+position = Vector2( 671.399, 378.301 )
+scale = Vector2( 21.9812, 12.8219 )
+z_index = -1
+texture = ExtResource( 8 )
+[connection signal="timeout" from="ColorRect/Timer" to="ColorRect/RichTextLabel" method="_on_Timer_timeout"]

@@ -1,0 +1,99 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://assets/run/gun/gun.png" type="Texture" id=2]
+[ext_resource path="res://assets/idle/realidle0000.png" type="Texture" id=3]
+[ext_resource path="res://assets/idle/realidle0001.png" type="Texture" id=4]
+[ext_resource path="res://assets/idle/realidle0002.png" type="Texture" id=5]
+[ext_resource path="res://assets/idle/realidle0003.png" type="Texture" id=6]
+[ext_resource path="res://assets/idle/realidle0004.png" type="Texture" id=7]
+[ext_resource path="res://assets/dash/dash.png" type="Texture" id=8]
+[ext_resource path="res://assets/run/run0000.png" type="Texture" id=9]
+[ext_resource path="res://assets/run/run0001.png" type="Texture" id=10]
+[ext_resource path="res://assets/run/run0002.png" type="Texture" id=11]
+[ext_resource path="res://assets/jump/jump0000.png" type="Texture" id=12]
+[ext_resource path="res://assets/jump/jump0001.png" type="Texture" id=13]
+[ext_resource path="res://assets/jump/jump0002.png" type="Texture" id=14]
+[ext_resource path="res://assets/jump/jump0003.png" type="Texture" id=15]
+[ext_resource path="res://assets/jump/jump0004.png" type="Texture" id=16]
+[ext_resource path="res://assets/jump/jump0005.png" type="Texture" id=17]
+[ext_resource path="res://assets/run/gun/gunrun0000.png" type="Texture" id=18]
+[ext_resource path="res://assets/run/gun/gunrun0001.png" type="Texture" id=19]
+[ext_resource path="res://assets/run/gun/gunrun0002.png" type="Texture" id=20]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "dash",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "jump",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "runwgun",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 14.9577, 39.6429 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 37.6964, 46.0062 )
+
+[node name="player" type="KinematicBody2D"]
+scale = Vector2( 0.9, 0.9 )
+script = ExtResource( 1 )
+
+[node name="gun" type="Sprite" parent="."]
+position = Vector2( 18.6873, -2.9199 )
+scale = Vector2( 1.7, 1.7 )
+z_index = 1
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Animation" type="AnimatedSprite" parent="."]
+scale = Vector2( 5, 5 )
+frames = SubResource( 1 )
+animation = "idle"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Air" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 2.9937, 6.58612 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="player" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="player"]
+position = Vector2( -0.647015, 6.50439 )
+shape = SubResource( 3 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 42.338, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="area_entered" from="player" to="." method="_on_player_area_entered"]
+[connection signal="body_entered" from="player" to="." method="_on_Area2D_body_entered"]

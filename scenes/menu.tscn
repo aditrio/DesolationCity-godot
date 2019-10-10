@@ -1,0 +1,204 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://scripts/menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/BG/test.png" type="Texture" id=2]
+[ext_resource path="res://scenes/realMap.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/BG/trees.png" type="Texture" id=4]
+[ext_resource path="res://assets/idle/realidle0000.png" type="Texture" id=5]
+[ext_resource path="res://assets/idle/realidle0001.png" type="Texture" id=6]
+[ext_resource path="res://assets/idle/realidle0002.png" type="Texture" id=7]
+[ext_resource path="res://assets/idle/realidle0003.png" type="Texture" id=8]
+[ext_resource path="res://assets/idle/realidle0004.png" type="Texture" id=9]
+[ext_resource path="res://scripts/fog.shader" type="Shader" id=10]
+[ext_resource path="res://icon.png" type="Texture" id=11]
+[ext_resource path="res://assets/audios/Mysterious Ambient Background Music - The Rake.ogg" type="AudioStream" id=12]
+[ext_resource path="res://title.tres" type="DynamicFont" id=13]
+[ext_resource path="res://assets/fonts/dpcomic.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://assets/fonts/potra/Potra.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://assets/hp/rad_sign.png" type="Texture" id=16]
+
+[sub_resource type="TileSet" id=1]
+0/name = "trees.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 22, 34 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+1/name = "trees.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 24, 0, 22, 34 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+1/z_index = 0
+2/name = "trees.png 2"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 88, 0, 20, 44 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [  ]
+2/z_index = 0
+3/name = "trees.png 3"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 108, 0, 22, 44 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shapes = [  ]
+3/z_index = 0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 10 )
+shader_param/color = Vector3( 1, 1, 1 )
+shader_param/OCTAVES = 4
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+outline_color = Color( 0.729412, 0.133333, 0.137255, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+outline_color = Color( 0.760784, 0.0941176, 0.0941176, 1 )
+font_data = ExtResource( 15 )
+
+[node name="menu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="bg" type="ParallaxBackground" parent="."]
+editor/display_folded = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="bg"]
+
+[node name="Sprite" type="Sprite" parent="bg/ParallaxLayer"]
+scale = Vector2( 10, 10 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 5, 5 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 917522, 5, 0, 917523, 1, 0, 983040, 2, 65538, 983041, 0, 0, 983042, 0, 1, 983043, 0, 1, 983044, 0, 1, 983045, 0, 1, 983046, 0, 1, 983047, 0, 1, 983048, 0, 1, 983049, 0, 1, 983050, 0, 1, 983051, 0, 1, 983052, 0, 1, 983053, 0, 1, 983054, 0, 1, 983055, 0, 1, 983056, 0, 1, 983057, 0, 1, 983058, 0, 2, 983059, 2, 65536, 1048576, 2, 65536, 1048577, 0, 65537, 1048578, 0, 65537, 1048579, 0, 65537, 1048580, 0, 65537, 1048581, 0, 65537, 1048582, 0, 65537, 1048583, 0, 65537, 1048584, 0, 65537, 1048585, 0, 65537, 1048586, 0, 65537, 1048587, 0, 65537, 1048588, 0, 65537, 1048589, 0, 65537, 1048590, 0, 65537, 1048591, 0, 65537, 1048592, 0, 65537, 1048593, 0, 65537, 1048594, 0, 65537, 1048595, 2, 65538, 1114112, 2, 65538, 1114113, 0, 131073, 1114114, 0, 131073, 1114115, 0, 131073, 1114116, 0, 131073, 1114117, 0, 131073, 1114118, 0, 131073, 1114119, 0, 131073, 1114120, 0, 131073, 1114121, 0, 131073, 1114122, 0, 131073, 1114123, 0, 131073, 1114124, 0, 131073, 1114125, 0, 131073, 1114126, 0, 131073, 1114127, 0, 131073, 1114128, 0, 131073, 1114129, 0, 131073, 1114130, 0, 131073, 1114131, 2, 65536 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+scale = Vector2( 8, 8 )
+z_index = -1
+tile_set = SubResource( 1 )
+cell_size = Vector2( 4, 4 )
+format = 1
+tile_data = PoolIntArray( 524292, 2, 0, 524298, 2, 0, 786431, 0, 0, 720910, 0, 0 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 969.72, 504.393 )
+scale = Vector2( 5, 5 )
+z_index = -1
+frames = SubResource( 2 )
+animation = "idle"
+frame = 2
+playing = true
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 2636.52, 667.768 )
+scale = Vector2( 91.5056, 34.4184 )
+texture = ExtResource( 11 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 0.631373 )
+position = Vector2( 645.247, 365.199 )
+scale = Vector2( 22.6505, 12.5621 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Control" type="Control" parent="."]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Panel" type="Label" parent="Control"]
+margin_left = 219.701
+margin_top = 71.1641
+margin_right = 1058.7
+margin_bottom = 190.164
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0.819608, 0.666667, 0.443137, 1 )
+custom_colors/font_color_shadow = Color( 0.937255, 0.121569, 0.121569, 1 )
+text = "Desolation city"
+
+[node name="Button" type="Button" parent="Control"]
+margin_left = 567.703
+margin_top = 304.794
+margin_right = 720.703
+margin_bottom = 342.794
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.819608, 0.666667, 0.443137, 1 )
+action_mode = 0
+text = "Play"
+
+[node name="Button3" type="Button" parent="Control"]
+margin_left = 568.003
+margin_top = 370.277
+margin_right = 721.003
+margin_bottom = 408.277
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.819608, 0.666667, 0.443137, 1 )
+action_mode = 0
+text = "About"
+
+[node name="Button2" type="Button" parent="Control"]
+margin_left = 569.23
+margin_top = 436.172
+margin_right = 722.23
+margin_bottom = 474.172
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.819608, 0.666667, 0.443137, 1 )
+action_mode = 0
+text = "Quit"
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 863.377
+margin_top = 176.326
+margin_right = 1046.38
+margin_bottom = 214.326
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.705882, 0.729412, 0.992157, 1 )
+text = "by adi_try"
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 715.878, 130.267 )
+scale = Vector2( 3.50245, 3.72171 )
+texture = ExtResource( 16 )
+[connection signal="button_down" from="Control/Button" to="." method="_on_Button_button_down"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_Button2_pressed"]
