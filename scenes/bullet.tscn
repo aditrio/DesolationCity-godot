@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/bullet.gd" type="Script" id=1]
+[ext_resource path="res://assets/run/gun/bullet.png" type="Texture" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 9.57905, 1.62413 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 5
+background_energy = 2.5
+ss_reflections_enabled = true
+ss_reflections_max_steps = 68
+glow_enabled = true
+glow_levels/2 = true
+glow_levels/4 = true
+glow_levels/6 = true
+glow_levels/7 = true
+glow_intensity = 4.7
+glow_strength = 0.65
+glow_bloom = 0.57
+glow_hdr_threshold = 2.5
+glow_hdr_scale = 2.22
+glow_bicubic_upscale = true
+adjustment_enabled = true
+adjustment_brightness = 3.72
+adjustment_contrast = 3.4
+adjustment_saturation = 3.3
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 2.96885
+height = 9.63574
+
+[node name="bullet" type="Area2D"]
+position = Vector2( 31.8209, 0 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+material = SubResource( 1 )
+position = Vector2( -26.3424, 2.10855 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 10, -30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 15.401, 0.418695 )
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.03
+autostart = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 18.3268, 0.472343 )
+rotation = 1.5708
+shape = SubResource( 4 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

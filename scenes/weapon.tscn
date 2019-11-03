@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/run/gun/gun.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 70.5463, 24.6331 )
+
+[node name="weapon" type="Area2D"]
+scale = Vector2( 0.2, 0.2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 76.1147, 23.9431 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 76.379, 11.8812 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )

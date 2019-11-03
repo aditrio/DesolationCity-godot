@@ -1,0 +1,171 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/finish.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Popup.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/dpcomic.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/fonts/Catharsis Cargo PC/CAC_____.TTF" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 4 )
+
+[node name="finish" type="Control"]
+script = ExtResource( 1 )
+
+[node name="Popup" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="WindowDialog" type="WindowDialog" parent="Popup"]
+visible = true
+margin_left = 475.449
+margin_top = 231.336
+margin_right = 877.449
+margin_bottom = 431.336
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="one" type="PanelContainer" parent="Popup/WindowDialog"]
+margin_left = 40.8699
+margin_top = 68.1188
+margin_right = 112.87
+margin_bottom = 111.119
+focus_mode = 2
+
+[node name="Panel" type="Panel" parent="Popup/WindowDialog/one"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 65.0001
+margin_bottom = 36.0002
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LineEdit" type="LineEdit" parent="Popup/WindowDialog/one/Panel"]
+margin_right = 58.0
+margin_bottom = 30.0
+align = 1
+max_length = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="two" type="PanelContainer" parent="Popup/WindowDialog"]
+editor/display_folded = true
+margin_left = 122.066
+margin_top = 67.6053
+margin_right = 194.066
+margin_bottom = 110.605
+
+[node name="Panel" type="Panel" parent="Popup/WindowDialog/two"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 65.0
+margin_bottom = 35.9997
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LineEdit" type="LineEdit" parent="Popup/WindowDialog/two/Panel"]
+margin_right = 58.0
+margin_bottom = 30.0
+align = 1
+max_length = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="three" type="PanelContainer" parent="Popup/WindowDialog"]
+editor/display_folded = true
+margin_left = 206.133
+margin_top = 68.5457
+margin_right = 278.133
+margin_bottom = 111.546
+
+[node name="Panel" type="Panel" parent="Popup/WindowDialog/three"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 65.0
+margin_bottom = 36.0003
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LineEdit" type="LineEdit" parent="Popup/WindowDialog/three/Panel"]
+margin_right = 58.0
+margin_bottom = 30.0
+align = 1
+max_length = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="four" type="PanelContainer" parent="Popup/WindowDialog"]
+editor/display_folded = true
+margin_left = 288.135
+margin_top = 69.0001
+margin_right = 360.135
+margin_bottom = 112.0
+
+[node name="Panel" type="Panel" parent="Popup/WindowDialog/four"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 65.0
+margin_bottom = 35.9999
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LineEdit" type="LineEdit" parent="Popup/WindowDialog/four/Panel"]
+margin_right = 58.0
+margin_bottom = 30.0
+align = 1
+max_length = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="Popup/WindowDialog"]
+margin_right = 401.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Popup/WindowDialog/Panel"]
+margin_left = 86.6289
+margin_top = 13.1676
+margin_right = 311.629
+margin_bottom = 32.1676
+custom_fonts/font = SubResource( 1 )
+text = "Use Mouse to Enter The Code"
+align = 1
+
+[node name="Panel2" type="CenterContainer" parent="Popup/WindowDialog"]
+margin_left = 121.015
+margin_top = 121.0
+margin_right = 280.015
+margin_bottom = 158.0
+
+[node name="Label" type="Label" parent="Popup/WindowDialog/Panel2"]
+margin_left = 47.0
+margin_top = 10.0
+margin_right = 112.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 2 )
+text = "becarefull "
+align = 1
+
+[node name="Button" type="Button" parent="Popup/WindowDialog"]
+margin_left = 160.0
+margin_top = 169.0
+margin_right = 238.0
+margin_bottom = 194.0
+custom_fonts/font = SubResource( 3 )
+text = "Submit"
+[connection signal="pressed" from="Popup/WindowDialog/Button" to="." method="_on_Button_pressed"]

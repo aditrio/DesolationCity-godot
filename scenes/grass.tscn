@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Area2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/grass/grass0000.png" type="Texture" id=2]
+[ext_resource path="res://assets/grass/grass0001.png" type="Texture" id=3]
+[ext_resource path="res://assets/grass/grass0002.png" type="Texture" id=4]
+[ext_resource path="res://assets/grass/grass0003.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "grass",
+"speed": 5.0
+} ]
+
+[node name="grass" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "grass"
+frame = 4
+offset = Vector2( 4.5, -3 )

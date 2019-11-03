@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stepwater_2.wav-7bd89c25f84ee460ee9352737d064722.sample"
+
+[deps]
+
+source_file="res://assets/audios/jute-dh-steps/stepwater_2.wav"
+dest_files=[ "res://.import/stepwater_2.wav-7bd89c25f84ee460ee9352737d064722.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
