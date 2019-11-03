@@ -1,0 +1,17 @@
+Please read this before using the font.
+
+-You may use this version of Potra Font for personal and commercial use.
+
+-You may not Sell or Distribute Cunia font for profit or alter it in
+any way without asking me first.  (e-mail  alejobergmann@gmail.com)
+
+Thank you for downloading/donating and using Potra Font, designed by Alejo Bergmann.
+
+Open Font License. Inspired in Hype Vector by Passion Artist.
+
+---
+
+www.designals.net
+www.be.net/alejobergmann
+www.rosariodesign.com
+

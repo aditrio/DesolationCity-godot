@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/outofammo.wav-6c01268161f4a709a04d3044921fb6b9.sample"
+
+[deps]
+
+source_file="res://assets/audios/shots/outofammo.wav"
+dest_files=[ "res://.import/outofammo.wav-6c01268161f4a709a04d3044921fb6b9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

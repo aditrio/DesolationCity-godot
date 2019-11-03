@@ -1,0 +1,123 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/about.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/potra/Potra.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/hp/rad_sign.png" type="Texture" id=3]
+[ext_resource path="res://assets/BG/bgeve.png" type="Texture" id=4]
+[ext_resource path="res://assets/BG/test.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/dpcomic.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/other/ig.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 6 )
+
+[node name="about" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 266.984
+margin_top = 75.997
+margin_right = 770.984
+margin_bottom = 147.997
+custom_fonts/font = SubResource( 5 )
+text = "DESOLATION CITY"
+align = 1
+
+[node name="Sprite" type="Sprite" parent="Label"]
+position = Vector2( 297.712, 37.3207 )
+scale = Vector2( 2.07814, 2.32117 )
+texture = ExtResource( 3 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 626.073
+margin_top = 104.39
+margin_right = 1130.07
+margin_bottom = 176.39
+custom_fonts/font = SubResource( 1 )
+text = "by Adi_try"
+align = 1
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 643.23, 366.301 )
+scale = Vector2( 5.37421, 6.098 )
+z_index = -1
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Sprite"]
+modulate = Color( 0, 0, 0, 0.839216 )
+position = Vector2( -1.8738, -1.23853 )
+scale = Vector2( 2.06864, 1.83716 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="about" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -409.5
+margin_top = -110.0
+margin_right = 409.5
+margin_bottom = 316.0
+custom_fonts/font = SubResource( 2 )
+text = "I really appreciate all you have done to help me to make this game.
+Thank You So Much !!
+
+
+Credit
+~
+Special Thanks To
+
+~Nolf~
+~VC~
+~EG~"
+align = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 42.009
+margin_top = 656.599
+margin_right = 124.009
+margin_bottom = 700.599
+custom_fonts/font = SubResource( 3 )
+text = "Back"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 224.802
+margin_top = 672.407
+margin_right = 308.802
+margin_bottom = 691.407
+custom_fonts/font = SubResource( 4 )
+text = ": adi__try"
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 187.634, 679.299 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

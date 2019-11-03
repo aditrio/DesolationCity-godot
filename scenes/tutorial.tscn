@@ -1,0 +1,356 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://scripts/tutorial.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/dpcomic.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/run/run0000.png" type="Texture" id=3]
+[ext_resource path="res://assets/run/run0001.png" type="Texture" id=4]
+[ext_resource path="res://assets/run/run0002.png" type="Texture" id=5]
+[ext_resource path="res://assets/jump/jump0000.png" type="Texture" id=6]
+[ext_resource path="res://assets/jump/jump0001.png" type="Texture" id=7]
+[ext_resource path="res://assets/jump/jump0002.png" type="Texture" id=8]
+[ext_resource path="res://assets/jump/jump0003.png" type="Texture" id=9]
+[ext_resource path="res://assets/jump/jump0004.png" type="Texture" id=10]
+[ext_resource path="res://assets/jump/jump0005.png" type="Texture" id=11]
+[ext_resource path="res://assets/jump/jump0006.png" type="Texture" id=12]
+[ext_resource path="res://assets/idle/realidle0000.png" type="Texture" id=13]
+[ext_resource path="res://assets/idle/realidle0001.png" type="Texture" id=14]
+[ext_resource path="res://assets/dash/dash.png" type="Texture" id=15]
+[ext_resource path="res://assets/other/92aa5c4689f0115.png" type="Texture" id=16]
+[ext_resource path="res://assets/other/space.png" type="Texture" id=17]
+[ext_resource path="res://assets/other/s.png" type="Texture" id=18]
+[ext_resource path="res://assets/run/gun/gun.png" type="Texture" id=19]
+[ext_resource path="res://assets/other/arr.png" type="Texture" id=20]
+[ext_resource path="res://assets/other/d.png" type="Texture" id=21]
+[ext_resource path="res://assets/lamp/lamp_red0000.png" type="Texture" id=22]
+[ext_resource path="res://assets/lamp/lamp_red0001.png" type="Texture" id=23]
+[ext_resource path="res://assets/lamp/lamp_red0002.png" type="Texture" id=24]
+[ext_resource path="res://assets/lamp/lamp_red0003.png" type="Texture" id=25]
+[ext_resource path="res://assets/lamp/lamp_red0004.png" type="Texture" id=26]
+[ext_resource path="res://assets/lamp/lamp_red0005.png" type="Texture" id=27]
+[ext_resource path="res://assets/lamp/lamp_yellow0000.png" type="Texture" id=28]
+[ext_resource path="res://assets/lamp/lamp_yellow0001.png" type="Texture" id=29]
+[ext_resource path="res://assets/lamp/lamp_yellow0002.png" type="Texture" id=30]
+[ext_resource path="res://assets/lamp/lamp_yellow0003.png" type="Texture" id=31]
+[ext_resource path="res://assets/lamp/lamp_yellow0004.png" type="Texture" id=32]
+[ext_resource path="res://assets/lamp/lamp_yellow0005.png" type="Texture" id=33]
+[ext_resource path="res://assets/hp/susu.png" type="Texture" id=34]
+[ext_resource path="res://assets/other/HHHH (2).png" type="Texture" id=35]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "dash",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=6]
+size = 42
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 42
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 42
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=11]
+size = 42
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 42
+font_data = ExtResource( 2 )
+
+[node name="how_to_play" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="ColorRect" parent="."]
+margin_left = -7.0
+margin_top = 3.0
+margin_right = 1288.0
+margin_bottom = 191.0
+color = Color( 0, 0, 0, 0.65098 )
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 451.811
+margin_top = 60.7224
+margin_right = 793.811
+margin_bottom = 124.722
+custom_fonts/font = SubResource( 1 )
+text = "How To Play"
+align = 1
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 19.7044
+margin_top = 137.139
+margin_right = 90.7044
+margin_bottom = 173.139
+custom_fonts/font = SubResource( 2 )
+text = "Back"
+
+[node name="Panel2" type="ColorRect" parent="."]
+editor/display_folded = true
+margin_left = -7.0
+margin_top = 197.0
+margin_right = 416.0
+margin_bottom = 729.0
+color = Color( 0, 0, 0, 0.65098 )
+
+[node name="run" type="AnimatedSprite" parent="Panel2"]
+position = Vector2( 63, 106.419 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 3 )
+animation = "run"
+frame = 1
+playing = true
+
+[node name="jump" type="AnimatedSprite" parent="Panel2"]
+position = Vector2( 63, 239.57 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 4 )
+animation = "jump"
+frame = 2
+playing = true
+
+[node name="dash" type="AnimatedSprite" parent="Panel2"]
+position = Vector2( 63, 365.427 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 5 )
+animation = "dash"
+playing = true
+
+[node name="rlkey" type="Sprite" parent="Panel2"]
+position = Vector2( 315, 125.795 )
+scale = Vector2( 0.2, 0.2 )
+z_index = 1
+texture = ExtResource( 16 )
+
+[node name=" jumpkey" type="Sprite" parent="Panel2"]
+position = Vector2( 318.877, 251.142 )
+scale = Vector2( 0.173385, 0.2 )
+z_index = 1
+texture = ExtResource( 17 )
+
+[node name=" dashkey" type="Sprite" parent="Panel2"]
+position = Vector2( 315, 373.317 )
+scale = Vector2( 0.2, 0.2 )
+z_index = 1
+texture = ExtResource( 18 )
+
+[node name="Panel" type="Panel" parent="Panel2"]
+modulate = Color( 0.14902, 0.129412, 0.129412, 0.517647 )
+margin_left = 127.0
+margin_top = 63.0
+margin_right = 387.0
+margin_bottom = 432.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="Panel2"]
+margin_left = 167.0
+margin_top = 108.97
+margin_right = 225.0
+margin_bottom = 147.97
+custom_fonts/font = SubResource( 6 )
+text = "Run"
+align = 1
+
+[node name="Label2" type="Label" parent="Panel2"]
+margin_left = 167.0
+margin_top = 226.762
+margin_right = 225.0
+margin_bottom = 265.762
+custom_fonts/font = SubResource( 6 )
+text = "Jump"
+align = 1
+
+[node name="Label3" type="Label" parent="Panel2"]
+margin_left = 167.0
+margin_top = 351.436
+margin_right = 255.0
+margin_bottom = 390.436
+custom_fonts/font = SubResource( 6 )
+text = "Dash"
+align = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 425.0
+margin_top = 197.0
+margin_right = 1280.0
+margin_bottom = 728.0
+color = Color( 0, 0, 0, 0.65098 )
+
+[node name="run2" type="AnimatedSprite" parent="ColorRect"]
+editor/display_folded = true
+position = Vector2( 93.275, 106 )
+scale = Vector2( 5, 5 )
+z_index = 1
+frames = SubResource( 3 )
+animation = "run"
+frame = 1
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ColorRect/run2"]
+position = Vector2( 4.24905, 0.180801 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 19 )
+
+[node name="Panel4" type="Panel" parent="ColorRect"]
+modulate = Color( 0.14902, 0.129412, 0.129412, 0.517647 )
+margin_left = 166.0
+margin_top = 63.0
+margin_right = 792.0
+margin_bottom = 432.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 198.731
+margin_top = 95.2006
+margin_right = 337.731
+margin_bottom = 134.201
+custom_fonts/font = SubResource( 7 )
+text = "Shooting"
+align = 1
+
+[node name="Sprite" type="Sprite" parent="ColorRect/Label"]
+editor/display_folded = true
+position = Vector2( 309.068, 20 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 20 )
+
+[node name="Sprite" type="Sprite" parent="ColorRect/Label/Sprite"]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0.858824, 0.858824, 0.858824, 1 )
+position = Vector2( 0.0351562, 115.722 )
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="ColorRect/Label"]
+margin_left = 377.05
+margin_top = 4.0
+margin_right = 417.05
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 8 )
+text = "+"
+
+[node name="Label2" type="Label" parent="ColorRect/Label"]
+margin_left = 231.88
+margin_top = 4.30243
+margin_right = 271.88
+margin_bottom = 43.3024
+custom_fonts/font = SubResource( 8 )
+text = "/"
+
+[node name="Sprite2" type="Sprite" parent="ColorRect/Label"]
+position = Vector2( 440.823, 20 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 21 )
+
+[node name="Sprite3" type="Sprite" parent="ColorRect/Label"]
+position = Vector2( 193.235, 20.3539 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 21 )
+
+[node name="danger" type="AnimatedSprite" parent="ColorRect"]
+position = Vector2( 102, 210.596 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 9 )
+frame = 5
+playing = true
+
+[node name="safe" type="AnimatedSprite" parent="ColorRect"]
+position = Vector2( 100.893, 288.487 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 10 )
+frame = 4
+playing = true
+
+[node name="Sprite" type="Sprite" parent="ColorRect"]
+position = Vector2( 104.158, 354.265 )
+texture = ExtResource( 34 )
+
+[node name="Label" type="Label" parent="ColorRect/Sprite"]
+margin_left = 170.93
+margin_top = -13.7323
+margin_right = 412.93
+margin_bottom = 25.2677
+custom_fonts/font = SubResource( 11 )
+text = "Milk ( +30 hp )"
+
+[node name="Label2" type="Label" parent="ColorRect/Sprite"]
+margin_left = 97.8025
+margin_top = -164.297
+margin_right = 299.802
+margin_bottom = -125.297
+custom_fonts/font = SubResource( 12 )
+text = "Danger Area"
+
+[node name="Label3" type="Label" parent="ColorRect/Sprite"]
+margin_left = 98.2336
+margin_top = -89.7787
+margin_right = 300.234
+margin_bottom = -50.7787
+custom_fonts/font = SubResource( 12 )
+text = "Safe Area"
+
+[node name="Sprite" type="Sprite" parent="ColorRect/Sprite"]
+position = Vector2( 122.051, 3.37256 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 35 )
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]

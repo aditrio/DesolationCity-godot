@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/electric_door_opening_2.wav-f9b7e9136cf3c54eadee94f03b529030.sample"
+
+[deps]
+
+source_file="res://assets/audios/electric_door_opening_2.wav"
+dest_files=[ "res://.import/electric_door_opening_2.wav-f9b7e9136cf3c54eadee94f03b529030.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
