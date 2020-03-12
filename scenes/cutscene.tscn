@@ -65,7 +65,7 @@ text = "Q : Skip | Enter : Next"
 position = Vector2( 100.171, 569.44 )
 scale = Vector2( 20, 20 )
 frames = SubResource( 3 )
-frame = 3
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true

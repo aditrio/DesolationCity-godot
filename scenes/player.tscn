@@ -11,15 +11,15 @@
 [ext_resource path="res://assets/run/run0000.png" type="Texture" id=9]
 [ext_resource path="res://assets/run/run0001.png" type="Texture" id=10]
 [ext_resource path="res://assets/run/run0002.png" type="Texture" id=11]
-[ext_resource path="res://assets/jump/jump0000.png" type="Texture" id=12]
-[ext_resource path="res://assets/jump/jump0001.png" type="Texture" id=13]
-[ext_resource path="res://assets/jump/jump0002.png" type="Texture" id=14]
-[ext_resource path="res://assets/jump/jump0003.png" type="Texture" id=15]
-[ext_resource path="res://assets/jump/jump0004.png" type="Texture" id=16]
-[ext_resource path="res://assets/jump/jump0005.png" type="Texture" id=17]
-[ext_resource path="res://assets/run/gun/gunrun0000.png" type="Texture" id=18]
-[ext_resource path="res://assets/run/gun/gunrun0001.png" type="Texture" id=19]
-[ext_resource path="res://assets/run/gun/gunrun0002.png" type="Texture" id=20]
+[ext_resource path="res://assets/run/gun/gunrun0000.png" type="Texture" id=12]
+[ext_resource path="res://assets/run/gun/gunrun0001.png" type="Texture" id=13]
+[ext_resource path="res://assets/run/gun/gunrun0002.png" type="Texture" id=14]
+[ext_resource path="res://assets/jump/jump0000.png" type="Texture" id=15]
+[ext_resource path="res://assets/jump/jump0001.png" type="Texture" id=16]
+[ext_resource path="res://assets/jump/jump0002.png" type="Texture" id=17]
+[ext_resource path="res://assets/jump/jump0003.png" type="Texture" id=18]
+[ext_resource path="res://assets/jump/jump0004.png" type="Texture" id=19]
+[ext_resource path="res://assets/jump/jump0005.png" type="Texture" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -38,15 +38,15 @@ animations = [ {
 "name": "run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "jump",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "runwgun",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "jump",
+"speed": 8.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]

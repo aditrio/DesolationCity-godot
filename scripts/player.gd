@@ -17,6 +17,7 @@ var upShoot = true
 var bounce = -50
 var stock_hp = 0
 var can_heal = false
+var move = true
 
 
 
@@ -56,7 +57,9 @@ func _process(delta):
 
 
 func _physics_process(delta : float) -> void:
-	playerMovement()
+	if move :
+		playerMovement()
+	
 	playerShooting()
 	died()
 	reload()
@@ -333,6 +336,8 @@ func _on_gate_body_exited(body):
 		pass
 
 func _on_trigger_body_entered(body):
+	move = false
+	$Animation.play("idle")
 	var trigger = get_parent().get_node("dialogBox/dialog")
 	var mission =  get_parent().get_node("ammo/ui/quest")
 	trigger.visible = true

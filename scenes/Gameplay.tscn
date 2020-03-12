@@ -936,13 +936,11 @@ script = ExtResource( 48 )
 shape = SubResource( 10 )
 
 [node name="dialogBox" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="dialog" parent="dialogBox" instance=ExtResource( 49 )]
 visible = false
 
 [node name="trigger" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 1885.17, 611.996 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]

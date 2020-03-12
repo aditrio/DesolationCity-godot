@@ -8,15 +8,15 @@
 [ext_resource path="res://assets/idle/realidle0003.png" type="Texture" id=6]
 [ext_resource path="res://assets/idle/realidle0004.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 26
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 22
 font_data = ExtResource( 1 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
@@ -40,7 +40,7 @@ margin_left = 232.0
 margin_top = 37.0
 margin_right = 848.0
 margin_bottom = 88.0
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 visible_characters = 0
 script = ExtResource( 2 )
@@ -54,15 +54,14 @@ margin_left = 1075.51
 margin_top = 11.9143
 margin_right = 1257.51
 margin_bottom = 32.9143
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Q : Skip | Enter : Next"
 align = 1
 
 [node name="idle" type="AnimatedSprite" parent="."]
 position = Vector2( 100, 569 )
 scale = Vector2( 20, 20 )
-frames = SubResource( 2 )
-frame = 4
+frames = SubResource( 3 )
 playing = true
 __meta__ = {
 "_edit_lock_": true
