@@ -116,7 +116,6 @@ scale = Vector2( 5, 5 )
 z_index = -1
 frames = SubResource( 2 )
 animation = "idle"
-frame = 2
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]

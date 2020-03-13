@@ -28,7 +28,7 @@
 [ext_resource path="res://scenes/fox.tscn" type="PackedScene" id=26]
 [ext_resource path="res://scripts/radiation.gd" type="Script" id=27]
 [ext_resource path="res://scripts/audio.gd" type="Script" id=28]
-[ext_resource path="res://assets/audios/Mysterious Ambient Background Music - The Rake.ogg" type="AudioStream" id=29]
+[ext_resource path="res://assets/audios/Mysterious-Ambient-Background-Music-The-Rake.wav" type="AudioStream" id=29]
 [ext_resource path="res://assets/audios/jute-dh-steps/stepdirt_8.wav" type="AudioStream" id=30]
 [ext_resource path="res://assets/audios/shots/pistol.wav" type="AudioStream" id=31]
 [ext_resource path="res://assets/audios/shots/weapload.wav" type="AudioStream" id=32]
@@ -382,6 +382,7 @@ scale = Vector2( 3, 3 )
 z_index = -2
 
 [node name="ammo" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="ui" type="CanvasLayer" parent="ammo"]
 
@@ -734,7 +735,6 @@ __meta__ = {
 }
 
 [node name="audio" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 28 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="audio"]
@@ -853,6 +853,7 @@ z_index = -1
 script = ExtResource( 44 )
 
 [node name="puzzle" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="one" type="Area2D" parent="puzzle"]
 position = Vector2( 2000, 350 )

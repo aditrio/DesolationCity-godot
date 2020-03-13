@@ -21,6 +21,7 @@ func _ready():
 func _physics_process(delta):
 	movement()
 	died()
+	
 
 func movement():
 	
@@ -51,10 +52,15 @@ func idle():
 
 func hp(damage):
 	hp -= damage
+	get_node("Particles2D").emitting = true
+	
+	
 func died():
 	if self.position.y >= 1000:
 		hp = 0
 		
 	if hp <= 0:
 		print("die")
+		get_node("Particles2D").emitting = true
 		queue_free()
+

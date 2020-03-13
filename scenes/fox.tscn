@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/fox.gd" type="Script" id=1]
 [ext_resource path="res://assets/enemies/fox/idle/fox0000.png" type="Texture" id=2]
@@ -26,6 +26,22 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 33.4863, 22.0819 )
 
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 2
+emission_box_extents = Vector3( 10, 1, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 35.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 5.0
+scale_random = 1.0
+color = Color( 0.0431373, 0.45098, 0.0352941, 1 )
+hue_variation = 0.8
+hue_variation_random = 0.7
+
 [node name="fox" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -38,3 +54,12 @@ frame = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.882275, 16.9266 )
 shape = SubResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 2.91178, 19.0884 )
+emitting = false
+amount = 65
+one_shot = true
+speed_scale = 4.5
+randomness = 0.2
+process_material = SubResource( 3 )

@@ -19,6 +19,7 @@ font_data = ExtResource( 4 )
 script = ExtResource( 1 )
 
 [node name="Popup" type="Popup" parent="."]
+visible = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 2 )
@@ -28,107 +29,33 @@ visible = true
 margin_left = 475.449
 margin_top = 231.336
 margin_right = 877.449
-margin_bottom = 431.336
+margin_bottom = 633.336
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="one" type="PanelContainer" parent="Popup/WindowDialog"]
-margin_left = 40.8699
-margin_top = 68.1188
-margin_right = 112.87
-margin_bottom = 111.119
+margin_left = 104.551
+margin_top = 59.0
+margin_right = 288.551
+margin_bottom = 102.0
 focus_mode = 2
 
 [node name="Panel" type="Panel" parent="Popup/WindowDialog/one"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 65.0001
-margin_bottom = 36.0002
+margin_right = 177.0
+margin_bottom = 36.0
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="LineEdit" type="LineEdit" parent="Popup/WindowDialog/one/Panel"]
-margin_right = 58.0
+margin_right = 177.0
 margin_bottom = 30.0
 align = 1
-max_length = 1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="two" type="PanelContainer" parent="Popup/WindowDialog"]
-editor/display_folded = true
-margin_left = 122.066
-margin_top = 67.6053
-margin_right = 194.066
-margin_bottom = 110.605
-
-[node name="Panel" type="Panel" parent="Popup/WindowDialog/two"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 65.0
-margin_bottom = 35.9997
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="LineEdit" type="LineEdit" parent="Popup/WindowDialog/two/Panel"]
-margin_right = 58.0
-margin_bottom = 30.0
-align = 1
-max_length = 1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="three" type="PanelContainer" parent="Popup/WindowDialog"]
-editor/display_folded = true
-margin_left = 206.133
-margin_top = 68.5457
-margin_right = 278.133
-margin_bottom = 111.546
-
-[node name="Panel" type="Panel" parent="Popup/WindowDialog/three"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 65.0
-margin_bottom = 36.0003
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="LineEdit" type="LineEdit" parent="Popup/WindowDialog/three/Panel"]
-margin_right = 58.0
-margin_bottom = 30.0
-align = 1
-max_length = 1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="four" type="PanelContainer" parent="Popup/WindowDialog"]
-editor/display_folded = true
-margin_left = 288.135
-margin_top = 69.0001
-margin_right = 360.135
-margin_bottom = 112.0
-
-[node name="Panel" type="Panel" parent="Popup/WindowDialog/four"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 65.0
-margin_bottom = 35.9999
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="LineEdit" type="LineEdit" parent="Popup/WindowDialog/four/Panel"]
-margin_right = 58.0
-margin_bottom = 30.0
-align = 1
-max_length = 1
+max_length = 4
+placeholder_text = "----"
 __meta__ = {
 "_edit_lock_": true
 }
@@ -147,10 +74,10 @@ text = "Use Mouse to Enter The Code"
 align = 1
 
 [node name="Panel2" type="CenterContainer" parent="Popup/WindowDialog"]
-margin_left = 121.015
-margin_top = 121.0
-margin_right = 280.015
-margin_bottom = 158.0
+margin_left = 117.102
+margin_top = 108.664
+margin_right = 276.102
+margin_bottom = 145.664
 
 [node name="Label" type="Label" parent="Popup/WindowDialog/Panel2"]
 margin_left = 47.0
@@ -162,10 +89,90 @@ text = "becarefull "
 align = 1
 
 [node name="Button" type="Button" parent="Popup/WindowDialog"]
-margin_left = 160.0
-margin_top = 169.0
-margin_right = 238.0
-margin_bottom = 194.0
+margin_left = 144.551
+margin_top = 358.664
+margin_right = 254.551
+margin_bottom = 383.664
 custom_fonts/font = SubResource( 3 )
 text = "Submit"
+
+[node name="Num" type="Button" parent="Popup/WindowDialog"]
+margin_left = 111.102
+margin_top = 158.664
+margin_right = 153.102
+margin_bottom = 191.664
+text = "1"
+
+[node name="Num2" type="Button" parent="Popup/WindowDialog"]
+margin_left = 178.501
+margin_top = 158.664
+margin_right = 220.501
+margin_bottom = 191.664
+text = "2"
+
+[node name="Num3" type="Button" parent="Popup/WindowDialog"]
+margin_left = 241.701
+margin_top = 159.678
+margin_right = 283.701
+margin_bottom = 192.678
+text = "3"
+
+[node name="Num4" type="Button" parent="Popup/WindowDialog"]
+margin_left = 111.102
+margin_top = 209.678
+margin_right = 153.102
+margin_bottom = 242.678
+text = "4"
+
+[node name="Num7" type="Button" parent="Popup/WindowDialog"]
+margin_left = 111.551
+margin_top = 258.664
+margin_right = 153.551
+margin_bottom = 291.664
+text = "7"
+
+[node name="Num5" type="Button" parent="Popup/WindowDialog"]
+margin_left = 178.501
+margin_top = 209.678
+margin_right = 220.501
+margin_bottom = 242.678
+text = "5"
+
+[node name="Num8" type="Button" parent="Popup/WindowDialog"]
+margin_left = 178.95
+margin_top = 258.664
+margin_right = 220.95
+margin_bottom = 291.664
+text = "8"
+
+[node name="Num6" type="Button" parent="Popup/WindowDialog"]
+margin_left = 241.701
+margin_top = 209.678
+margin_right = 283.701
+margin_bottom = 242.678
+text = "6"
+
+[node name="Num9" type="Button" parent="Popup/WindowDialog"]
+margin_left = 242.15
+margin_top = 258.664
+margin_right = 284.15
+margin_bottom = 291.664
+text = "9"
+
+[node name="Num10" type="Button" parent="Popup/WindowDialog"]
+margin_left = 178.95
+margin_top = 308.664
+margin_right = 220.95
+margin_bottom = 341.664
+text = "0"
 [connection signal="pressed" from="Popup/WindowDialog/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Popup/WindowDialog/Num" to="Popup" method="_on_Num_pressed"]
+[connection signal="pressed" from="Popup/WindowDialog/Num2" to="Popup" method="_on_Num2_pressed"]
+[connection signal="pressed" from="Popup/WindowDialog/Num3" to="Popup" method="_on_Num3_pressed"]
+[connection signal="pressed" from="Popup/WindowDialog/Num4" to="Popup" method="_on_Num4_pressed"]
+[connection signal="pressed" from="Popup/WindowDialog/Num7" to="Popup" method="_on_Num7_pressed"]
+[connection signal="pressed" from="Popup/WindowDialog/Num5" to="Popup" method="_on_Num5_pressed"]
+[connection signal="pressed" from="Popup/WindowDialog/Num8" to="Popup" method="_on_Num8_pressed"]
+[connection signal="pressed" from="Popup/WindowDialog/Num6" to="Popup" method="_on_Num6_pressed"]
+[connection signal="pressed" from="Popup/WindowDialog/Num9" to="Popup" method="_on_Num9_pressed"]
+[connection signal="pressed" from="Popup/WindowDialog/Num10" to="Popup" method="_on_Num10_pressed"]

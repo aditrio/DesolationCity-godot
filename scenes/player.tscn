@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/run/gun/gun.png" type="Texture" id=2]
@@ -11,15 +11,15 @@
 [ext_resource path="res://assets/run/run0000.png" type="Texture" id=9]
 [ext_resource path="res://assets/run/run0001.png" type="Texture" id=10]
 [ext_resource path="res://assets/run/run0002.png" type="Texture" id=11]
-[ext_resource path="res://assets/run/gun/gunrun0000.png" type="Texture" id=12]
-[ext_resource path="res://assets/run/gun/gunrun0001.png" type="Texture" id=13]
-[ext_resource path="res://assets/run/gun/gunrun0002.png" type="Texture" id=14]
-[ext_resource path="res://assets/jump/jump0000.png" type="Texture" id=15]
-[ext_resource path="res://assets/jump/jump0001.png" type="Texture" id=16]
-[ext_resource path="res://assets/jump/jump0002.png" type="Texture" id=17]
-[ext_resource path="res://assets/jump/jump0003.png" type="Texture" id=18]
-[ext_resource path="res://assets/jump/jump0004.png" type="Texture" id=19]
-[ext_resource path="res://assets/jump/jump0005.png" type="Texture" id=20]
+[ext_resource path="res://assets/jump/jump0000.png" type="Texture" id=12]
+[ext_resource path="res://assets/jump/jump0001.png" type="Texture" id=13]
+[ext_resource path="res://assets/jump/jump0002.png" type="Texture" id=14]
+[ext_resource path="res://assets/jump/jump0003.png" type="Texture" id=15]
+[ext_resource path="res://assets/jump/jump0004.png" type="Texture" id=16]
+[ext_resource path="res://assets/jump/jump0005.png" type="Texture" id=17]
+[ext_resource path="res://assets/run/gun/gunrun0000.png" type="Texture" id=18]
+[ext_resource path="res://assets/run/gun/gunrun0001.png" type="Texture" id=19]
+[ext_resource path="res://assets/run/gun/gunrun0002.png" type="Texture" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -38,15 +38,15 @@ animations = [ {
 "name": "run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "runwgun",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "jump",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "runwgun",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -54,6 +54,35 @@ extents = Vector2( 14.9577, 39.6429 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 37.6964, 46.0062 )
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0.165605, 0.611465, 0.993631, 1 )
+colors = PoolColorArray( 0.864746, 0.216187, 0.216187, 1, 0.872559, 0.872559, 0.872559, 1, 0.888184, 0.0797977, 0.0797977, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.378182, 47.52 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+emission_shape = 2
+emission_box_extents = Vector3( 25, 10, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 40.82
+linear_accel_curve = SubResource( 7 )
+scale = 7.0
+scale_random = 1.0
+color_ramp = SubResource( 5 )
 
 [node name="player" type="KinematicBody2D"]
 scale = Vector2( 0.9, 0.9 )
@@ -95,5 +124,14 @@ position = Vector2( 42.338, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( -4.11814, 46.8439 )
+emitting = false
+amount = 50
+lifetime = 1.8
+one_shot = true
+speed_scale = 2.0
+process_material = SubResource( 8 )
 [connection signal="area_entered" from="player" to="." method="_on_player_area_entered"]
 [connection signal="body_entered" from="player" to="." method="_on_Area2D_body_entered"]

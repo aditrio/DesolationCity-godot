@@ -283,6 +283,7 @@ func heal():
 		if Input.is_action_just_pressed("h"):
 			if hp < 100 and hp > 0 :
 				hp += 30
+				$Particles2D.emitting = true
 				stock_hp -= 1
 			else:
 				pass
