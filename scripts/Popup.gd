@@ -54,3 +54,7 @@ func _on_Num9_pressed():
 
 func _on_Num10_pressed():
 	check.get_node("one/Panel/LineEdit").text += "0"
+
+
+func _on_Num11_pressed():
+	check.get_node("one/Panel/LineEdit").text += ""

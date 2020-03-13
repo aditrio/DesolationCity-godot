@@ -19,7 +19,6 @@ font_data = ExtResource( 4 )
 script = ExtResource( 1 )
 
 [node name="Popup" type="Popup" parent="."]
-visible = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 2 )
@@ -165,6 +164,13 @@ margin_top = 308.664
 margin_right = 220.95
 margin_bottom = 341.664
 text = "0"
+
+[node name="Num11" type="Button" parent="Popup/WindowDialog"]
+margin_left = 242.15
+margin_top = 308.664
+margin_right = 284.15
+margin_bottom = 341.664
+text = "Del"
 [connection signal="pressed" from="Popup/WindowDialog/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Popup/WindowDialog/Num" to="Popup" method="_on_Num_pressed"]
 [connection signal="pressed" from="Popup/WindowDialog/Num2" to="Popup" method="_on_Num2_pressed"]
@@ -176,3 +182,4 @@ text = "0"
 [connection signal="pressed" from="Popup/WindowDialog/Num6" to="Popup" method="_on_Num6_pressed"]
 [connection signal="pressed" from="Popup/WindowDialog/Num9" to="Popup" method="_on_Num9_pressed"]
 [connection signal="pressed" from="Popup/WindowDialog/Num10" to="Popup" method="_on_Num10_pressed"]
+[connection signal="pressed" from="Popup/WindowDialog/Num11" to="Popup" method="_on_Num11_pressed"]
